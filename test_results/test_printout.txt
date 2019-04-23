@@ -1,103 +1,138 @@
-60000/60000 [==============================] - 2s 29us/step - loss: 0.7431 - acc: 0.7751 - val_loss: 0.2872 - val_acc: 0.9158
+Using TensorFlow backend.
+2019-04-23 16:21:51.757657: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-04-23 16:21:51.780808: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 1800000000 Hz
+2019-04-23 16:21:51.782213: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55e11e1c65a0 executing computations on platform Host. Devices:
+2019-04-23 16:21:51.782266: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-04-23 16:21:51.872154: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:998] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-04-23 16:21:51.872798: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55e11e256700 executing computations on platform CUDA. Devices:
+2019-04-23 16:21:51.872817: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce MX150, Compute Capability 6.1
+2019-04-23 16:21:51.872983: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce MX150 major: 6 minor: 1 memoryClockRate(GHz): 1.5315
+pciBusID: 0000:01:00.0
+totalMemory: 1.96GiB freeMemory: 1.34GiB
+2019-04-23 16:21:51.872999: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-04-23 16:21:51.873772: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-04-23 16:21:51.873784: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-04-23 16:21:51.873792: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-04-23 16:21:51.873929: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1148 MB memory) -> physical GPU (device: 0, name: GeForce MX150, pci bus id: 0000:01:00.0, compute capability: 6.1)
+WARNING:tensorflow:From /home/choyg/.conda/envs/keras_env/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/choyg/.conda/envs/keras_env/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Test FC network and FC with drop out
+WARNING:tensorflow:From /home/choyg/.conda/envs/keras_env/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Train on 60000 samples, validate on 10000 samples
+Epoch 1/10
+2019-04-23 16:21:58.921507: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-04-23 16:21:58.921555: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-04-23 16:21:58.921562: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-04-23 16:21:58.921567: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-04-23 16:21:58.921716: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1148 MB memory) -> physical GPU (device: 0, name: GeForce MX150, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2019-04-23 16:21:59.716307: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+60000/60000 [==============================] - 2s 29us/step - loss: 0.7285 - acc: 0.7775 - val_loss: 0.3226 - val_acc: 0.9054
 Epoch 2/10
-60000/60000 [==============================] - 1s 13us/step - loss: 0.2569 - acc: 0.9233 - val_loss: 0.1856 - val_acc: 0.9458
+60000/60000 [==============================] - 1s 13us/step - loss: 0.2570 - acc: 0.9225 - val_loss: 0.1907 - val_acc: 0.9413
 Epoch 3/10
-60000/60000 [==============================] - 1s 13us/step - loss: 0.1853 - acc: 0.9436 - val_loss: 0.1443 - val_acc: 0.9583
+60000/60000 [==============================] - 1s 13us/step - loss: 0.1842 - acc: 0.9439 - val_loss: 0.1916 - val_acc: 0.9366
 Epoch 4/10
-60000/60000 [==============================] - 1s 14us/step - loss: 0.1439 - acc: 0.9556 - val_loss: 0.1165 - val_acc: 0.9637
+60000/60000 [==============================] - 1s 13us/step - loss: 0.1405 - acc: 0.9577 - val_loss: 0.1258 - val_acc: 0.9601
 Epoch 5/10
-60000/60000 [==============================] - 1s 14us/step - loss: 0.1255 - acc: 0.9611 - val_loss: 0.1042 - val_acc: 0.9673
+60000/60000 [==============================] - 1s 13us/step - loss: 0.1268 - acc: 0.9619 - val_loss: 0.1027 - val_acc: 0.9672
 Epoch 6/10
-60000/60000 [==============================] - 1s 14us/step - loss: 0.1031 - acc: 0.9690 - val_loss: 0.0989 - val_acc: 0.9698
+60000/60000 [==============================] - 1s 13us/step - loss: 0.0988 - acc: 0.9700 - val_loss: 0.0994 - val_acc: 0.9680
 Epoch 7/10
-60000/60000 [==============================] - 1s 13us/step - loss: 0.0826 - acc: 0.9750 - val_loss: 0.0867 - val_acc: 0.9721
+60000/60000 [==============================] - 1s 13us/step - loss: 0.0898 - acc: 0.9724 - val_loss: 0.0871 - val_acc: 0.9723
 Epoch 8/10
-60000/60000 [==============================] - 1s 13us/step - loss: 0.0707 - acc: 0.9786 - val_loss: 0.0837 - val_acc: 0.9728
+60000/60000 [==============================] - 1s 13us/step - loss: 0.0793 - acc: 0.9762 - val_loss: 0.0823 - val_acc: 0.9735
 Epoch 9/10
-60000/60000 [==============================] - 1s 13us/step - loss: 0.0775 - acc: 0.9771 - val_loss: 0.0734 - val_acc: 0.9765
+60000/60000 [==============================] - 1s 13us/step - loss: 0.0612 - acc: 0.9817 - val_loss: 0.0799 - val_acc: 0.9742
 Epoch 10/10
-60000/60000 [==============================] - 1s 13us/step - loss: 0.0524 - acc: 0.9840 - val_loss: 0.0728 - val_acc: 0.9770
-Test loss: 1.6368658542633057
-Test accuracy: 0.5
+60000/60000 [==============================] - 1s 13us/step - loss: 0.0650 - acc: 0.9806 - val_loss: 0.0706 - val_acc: 0.9767
+Test loss: 2.097367763519287
+Test accuracy: 0.36666667461395264
 
 Train on 60000 samples, validate on 10000 samples
 Epoch 1/10
-60000/60000 [==============================] - 1s 19us/step - loss: 0.8482 - acc: 0.7305 - val_loss: 0.2804 - val_acc: 0.9171
+60000/60000 [==============================] - 1s 19us/step - loss: 0.8342 - acc: 0.7370 - val_loss: 0.2850 - val_acc: 0.9108
 Epoch 2/10
-60000/60000 [==============================] - 1s 15us/step - loss: 0.3088 - acc: 0.9109 - val_loss: 0.2108 - val_acc: 0.9360
+60000/60000 [==============================] - 1s 14us/step - loss: 0.3058 - acc: 0.9112 - val_loss: 0.1913 - val_acc: 0.9396
 Epoch 3/10
-60000/60000 [==============================] - 1s 14us/step - loss: 0.2139 - acc: 0.9387 - val_loss: 0.1566 - val_acc: 0.9499
+60000/60000 [==============================] - 1s 15us/step - loss: 0.2253 - acc: 0.9354 - val_loss: 0.1416 - val_acc: 0.9557
 Epoch 4/10
-60000/60000 [==============================] - 1s 15us/step - loss: 0.1727 - acc: 0.9511 - val_loss: 0.1274 - val_acc: 0.9611
+60000/60000 [==============================] - 1s 15us/step - loss: 0.1717 - acc: 0.9510 - val_loss: 0.1302 - val_acc: 0.9596
 Epoch 5/10
-60000/60000 [==============================] - 1s 15us/step - loss: 0.1437 - acc: 0.9590 - val_loss: 0.1251 - val_acc: 0.9622
+60000/60000 [==============================] - 1s 15us/step - loss: 0.1443 - acc: 0.9588 - val_loss: 0.1070 - val_acc: 0.9667
 Epoch 6/10
-60000/60000 [==============================] - 1s 14us/step - loss: 0.1230 - acc: 0.9647 - val_loss: 0.0994 - val_acc: 0.9688
+60000/60000 [==============================] - 1s 15us/step - loss: 0.1225 - acc: 0.9654 - val_loss: 0.0954 - val_acc: 0.9711
 Epoch 7/10
-60000/60000 [==============================] - 1s 14us/step - loss: 0.1076 - acc: 0.9694 - val_loss: 0.0893 - val_acc: 0.9709
+60000/60000 [==============================] - 1s 15us/step - loss: 0.1029 - acc: 0.9702 - val_loss: 0.1145 - val_acc: 0.9665
 Epoch 8/10
-60000/60000 [==============================] - 1s 14us/step - loss: 0.0909 - acc: 0.9738 - val_loss: 0.0833 - val_acc: 0.9740
+60000/60000 [==============================] - 1s 15us/step - loss: 0.0894 - acc: 0.9740 - val_loss: 0.0953 - val_acc: 0.9697
 Epoch 9/10
-60000/60000 [==============================] - 1s 15us/step - loss: 0.0800 - acc: 0.9766 - val_loss: 0.0760 - val_acc: 0.9756
+60000/60000 [==============================] - 1s 15us/step - loss: 0.0778 - acc: 0.9763 - val_loss: 0.0721 - val_acc: 0.9775
 Epoch 10/10
-60000/60000 [==============================] - 1s 14us/step - loss: 0.0726 - acc: 0.9788 - val_loss: 0.0745 - val_acc: 0.9763
-Test loss: 1.2665427923202515
-Test accuracy: 0.5
+60000/60000 [==============================] - 1s 15us/step - loss: 0.0706 - acc: 0.9797 - val_loss: 0.0763 - val_acc: 0.9760
+Test loss: 2.1885976791381836
+Test accuracy: 0.36666667461395264
 
 Test CNN and CNN with drop out
 Train on 60000 samples, validate on 10000 samples
 Epoch 1/10
-2019-04-23 11:47:26.444656: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 632.81MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
-2019-04-23 11:47:26.444711: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 531.32MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
-2019-04-23 11:47:26.470604: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 406.96MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
-2019-04-23 11:47:26.470653: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 478.69MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
-2019-04-23 11:47:26.649067: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 937.50MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
-2019-04-23 11:47:26.688789: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 474.89MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
-2019-04-23 11:47:26.829086: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 548.32MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
-2019-04-23 11:47:26.829129: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 406.96MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
-2019-04-23 11:47:26.855459: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 651.45MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
-60000/60000 [==============================] - 13s 219us/step - loss: 0.6942 - acc: 0.7821 - val_loss: 0.1946 - val_acc: 0.9452
+2019-04-23 16:22:20.666540: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 632.81MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-04-23 16:22:20.666599: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 531.32MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-04-23 16:22:20.692330: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 406.96MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-04-23 16:22:20.692377: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 478.69MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-04-23 16:22:20.869408: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 937.50MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-04-23 16:22:20.908779: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 474.89MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-04-23 16:22:21.048128: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 548.32MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-04-23 16:22:21.048170: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 406.96MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-04-23 16:22:21.073528: W tensorflow/core/common_runtime/bfc_allocator.cc:211] Allocator (GPU_0_bfc) ran out of memory trying to allocate 651.45MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+60000/60000 [==============================] - 13s 219us/step - loss: 0.6996 - acc: 0.7953 - val_loss: 0.2239 - val_acc: 0.9337
 Epoch 2/10
-60000/60000 [==============================] - 11s 192us/step - loss: 0.1514 - acc: 0.9553 - val_loss: 0.2201 - val_acc: 0.9246
+60000/60000 [==============================] - 12s 192us/step - loss: 0.1655 - acc: 0.9506 - val_loss: 0.1649 - val_acc: 0.9466
 Epoch 3/10
-60000/60000 [==============================] - 12s 192us/step - loss: 0.0938 - acc: 0.9725 - val_loss: 0.0644 - val_acc: 0.9804
+60000/60000 [==============================] - 12s 192us/step - loss: 0.1042 - acc: 0.9694 - val_loss: 0.0690 - val_acc: 0.9789
 Epoch 4/10
-60000/60000 [==============================] - 12s 192us/step - loss: 0.0688 - acc: 0.9802 - val_loss: 0.0516 - val_acc: 0.9834
+60000/60000 [==============================] - 12s 192us/step - loss: 0.0694 - acc: 0.9791 - val_loss: 0.0549 - val_acc: 0.9823
 Epoch 5/10
-60000/60000 [==============================] - 12s 192us/step - loss: 0.0515 - acc: 0.9848 - val_loss: 0.0494 - val_acc: 0.9836
+60000/60000 [==============================] - 12s 192us/step - loss: 0.0560 - acc: 0.9829 - val_loss: 0.0445 - val_acc: 0.9855
 Epoch 6/10
-60000/60000 [==============================] - 12s 192us/step - loss: 0.0417 - acc: 0.9875 - val_loss: 0.0458 - val_acc: 0.9854
+60000/60000 [==============================] - 12s 192us/step - loss: 0.0440 - acc: 0.9868 - val_loss: 0.0451 - val_acc: 0.9848
 Epoch 7/10
-60000/60000 [==============================] - 12s 192us/step - loss: 0.0379 - acc: 0.9883 - val_loss: 0.0386 - val_acc: 0.9864
+60000/60000 [==============================] - 12s 193us/step - loss: 0.0377 - acc: 0.9886 - val_loss: 0.0452 - val_acc: 0.9846
 Epoch 8/10
-60000/60000 [==============================] - 12s 192us/step - loss: 0.0301 - acc: 0.9911 - val_loss: 0.0382 - val_acc: 0.9872
+60000/60000 [==============================] - 12s 193us/step - loss: 0.0405 - acc: 0.9876 - val_loss: 0.0368 - val_acc: 0.9871
 Epoch 9/10
-60000/60000 [==============================] - 12s 192us/step - loss: 0.0260 - acc: 0.9918 - val_loss: 0.0316 - val_acc: 0.9890
+60000/60000 [==============================] - 12s 193us/step - loss: 0.0257 - acc: 0.9923 - val_loss: 0.0356 - val_acc: 0.9875
 Epoch 10/10
-60000/60000 [==============================] - 12s 192us/step - loss: 0.0210 - acc: 0.9940 - val_loss: 0.0314 - val_acc: 0.9900
-Test loss: 0.7408297657966614
-Test accuracy: 0.800000011920929
+60000/60000 [==============================] - 12s 193us/step - loss: 0.0236 - acc: 0.9926 - val_loss: 0.0327 - val_acc: 0.9886
+Test loss: 1.5110989809036255
+Test accuracy: 0.6000000238418579
 
 Train on 60000 samples, validate on 10000 samples
 Epoch 1/10
-60000/60000 [==============================] - 14s 225us/step - loss: 0.7564 - acc: 0.7660 - val_loss: 0.1810 - val_acc: 0.9471
+60000/60000 [==============================] - 16s 267us/step - loss: 0.7666 - acc: 0.7591 - val_loss: 0.1795 - val_acc: 0.9478
 Epoch 2/10
-60000/60000 [==============================] - 13s 218us/step - loss: 0.2246 - acc: 0.9336 - val_loss: 0.1006 - val_acc: 0.9696
+60000/60000 [==============================] - 13s 218us/step - loss: 0.2139 - acc: 0.9377 - val_loss: 0.0963 - val_acc: 0.9706
 Epoch 3/10
-60000/60000 [==============================] - 13s 217us/step - loss: 0.1490 - acc: 0.9567 - val_loss: 0.0679 - val_acc: 0.9779
+60000/60000 [==============================] - 13s 218us/step - loss: 0.1433 - acc: 0.9579 - val_loss: 0.0675 - val_acc: 0.9790
 Epoch 4/10
-60000/60000 [==============================] - 13s 217us/step - loss: 0.1141 - acc: 0.9660 - val_loss: 0.0569 - val_acc: 0.9812
+60000/60000 [==============================] - 13s 218us/step - loss: 0.1151 - acc: 0.9663 - val_loss: 0.0540 - val_acc: 0.9838
 Epoch 5/10
-60000/60000 [==============================] - 13s 217us/step - loss: 0.0918 - acc: 0.9724 - val_loss: 0.0467 - val_acc: 0.9843
+60000/60000 [==============================] - 13s 218us/step - loss: 0.0946 - acc: 0.9721 - val_loss: 0.0481 - val_acc: 0.9842
 Epoch 6/10
-60000/60000 [==============================] - 13s 217us/step - loss: 0.0812 - acc: 0.9760 - val_loss: 0.0418 - val_acc: 0.9867
+60000/60000 [==============================] - 13s 218us/step - loss: 0.0806 - acc: 0.9763 - val_loss: 0.0431 - val_acc: 0.9852
 Epoch 7/10
-60000/60000 [==============================] - 13s 217us/step - loss: 0.0738 - acc: 0.9783 - val_loss: 0.0385 - val_acc: 0.9866
+60000/60000 [==============================] - 13s 218us/step - loss: 0.0722 - acc: 0.9779 - val_loss: 0.0400 - val_acc: 0.9863
 Epoch 8/10
-60000/60000 [==============================] - 13s 218us/step - loss: 0.0651 - acc: 0.9804 - val_loss: 0.0338 - val_acc: 0.9891
+60000/60000 [==============================] - 13s 218us/step - loss: 0.0644 - acc: 0.9807 - val_loss: 0.0385 - val_acc: 0.9867
 Epoch 9/10
-60000/60000 [==============================] - 13s 217us/step - loss: 0.0590 - acc: 0.9823 - val_loss: 0.0354 - val_acc: 0.9879
+60000/60000 [==============================] - 13s 218us/step - loss: 0.0597 - acc: 0.9817 - val_loss: 0.0341 - val_acc: 0.9876
 Epoch 10/10
-60000/60000 [==============================] - 13s 217us/step - loss: 0.0543 - acc: 0.9838 - val_loss: 0.0320 - val_acc: 0.9888
-Test loss: 0.6212835311889648
-Test accuracy: 0.800000011920929
+60000/60000 [==============================] - 13s 218us/step - loss: 0.0537 - acc: 0.9834 - val_loss: 0.0322 - val_acc: 0.9883
+Test loss: 0.859388530254364
+Test accuracy: 0.6666666865348816

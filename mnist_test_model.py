@@ -74,23 +74,26 @@ def read_dataset_dense(CLASS_NUM):
 
 def load_images_from_folder(folder):
     all_images = []
-    image_list = os.listdir(folder)
-    image_list.sort(key=lambda x: int(os.path.splitext(x)[0]))
-    for image_path in image_list:
-        img = io.imread(os.path.join(folder,image_path))
-        img = util.invert(img)
-        all_images.append(img)
+    set_list = os.listdir(folder)
+    set_list.sort(key=lambda x: os.path.splitext(x)[0])
+    for set_path in set_list:
+        set_path_full = os.path.join(folder,set_path)
+        image_list = os.listdir(set_path_full)
+        image_list.sort(key=lambda x: int(os.path.splitext(x)[0]))
+        for image_path in image_list:
+            img = io.imread(os.path.join(set_path_full,image_path))
+            img = util.invert(img)
+            all_images.append(img)
     return np.array(all_images)
 
 def read_dataset_image_cnn(CLASS_NUM):
     # Load mnist data set
     x_test_image = load_images_from_folder('test_images')
-    num_images = x_test_image.shape[0]
-    y_test_image = np.arange(0, num_images)
-
+    y_test_image = []
+    for i in range(int(x_test_image.shape[0]/CLASS_NUM)):
+        y_test_image = y_test_image + list(range(CLASS_NUM))
     WIDTH = x_test_image.shape[2]
     HEIGHT = x_test_image.shape[1]
-    CLASS_NUM = 10
 
     # case by backend, 
     if K.image_data_format() == 'channels_first':
@@ -115,12 +118,11 @@ def read_dataset_image_cnn(CLASS_NUM):
 def read_dataset_image_dense(CLASS_NUM):
     # Load mnist data set
     x_test_image = load_images_from_folder('test_images')
-    num_images = x_test_image.shape[0]
-    y_test_image = np.arange(0, num_images)
-
+    y_test_image = []
+    for i in range(int(x_test_image.shape[0]/CLASS_NUM)):
+        y_test_image = y_test_image + list(range(CLASS_NUM))
     WIDTH = x_test_image.shape[2]
     HEIGHT = x_test_image.shape[1]
-    CLASS_NUM = 10
 
     x_test_image = x_test_image.reshape(x_test_image.shape[0], HEIGHT*WIDTH)
     input_shape = [HEIGHT*WIDTH]
