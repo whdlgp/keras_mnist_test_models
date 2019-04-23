@@ -20,7 +20,8 @@ Trainable params: 399,498
 Non-trainable params: 0
 _________________________________________________________________
 ```
-![](test_results/FC_nodropout_loss.png)
+<img src=test_results/FC_nodropout_loss.png width="512" height="384">  
+
 #### Test loss (with 30 custom image)
 ```
 Test loss: 2.097367763519287
@@ -48,7 +49,8 @@ Trainable params: 399,498
 Non-trainable params: 0
 _________________________________________________________________
 ```
-![](test_results/FC_dropout_loss.png)
+<img src=test_results/FC_dropout_loss.png width="512" height="384">  
+
 #### Test loss (with 30 custom image)
 ```
 Test loss: 2.1885976791381836
@@ -77,7 +79,8 @@ Trainable params: 1,199,882
 Non-trainable params: 0
 _________________________________________________________________
 ```
-![](test_results/CNN_nodropout_loss.png)
+<img src=test_results/CNN_nodropout_loss.png width="512" height="384">  
+
 #### Test loss (with 30 custom image)
 ```
 Test loss: 1.5110989809036255
@@ -110,7 +113,8 @@ Trainable params: 1,199,882
 Non-trainable params: 0
 _________________________________________________________________
 ```
-![](test_results/CNN_dropout_loss.png)
+<img src=test_results/CNN_dropout_loss.png width="512" height="384">  
+
 #### Test loss (with 30 custom image)
 ```
 Test loss: 0.859388530254364
