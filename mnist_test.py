@@ -53,7 +53,11 @@ print('Test FC network and FC with drop out')
 for i, model in enumerate(model_list_dense):
     # draw model, save
     plot_model(model, to_file='test_results/'+model_list_dense_name[i]+'_model.png', show_shapes=True, show_layer_names=True)
-
+    
+    with open('test_results/'+model_list_dense_name[i]+'_model.txt','w') as fh:
+    # Pass the file handle in as a lambda function to make it callable
+        model.summary(print_fn=lambda x: fh.write(x + '\n'))
+    
     # Learning
     model.compile(loss=keras.losses.categorical_crossentropy,
                 optimizer=keras.optimizers.Adadelta(),
@@ -79,6 +83,7 @@ for i, model in enumerate(model_list_dense):
     plt.savefig('test_results/'+model_list_dense_name[i]+'_loss.png')
     plt.cla()
     
+    # evalutate with test image set
     score = model.evaluate(x_image_test_dense, y_image_test_dense, verbose=0)
     print('Test loss:', score[0])
     print('Test accuracy:', score[1])
@@ -88,6 +93,10 @@ print('Test CNN and CNN with drop out')
 for i, model in enumerate(model_list_cnn):
     # draw model, save
     plot_model(model, to_file='test_results/'+model_list_cnn_name[i]+'_model.png', show_shapes=True, show_layer_names=True)
+
+    with open('test_results/'+model_list_cnn_name[i]+'_model.txt','w') as fh:
+    # Pass the file handle in as a lambda function to make it callable
+        model.summary(print_fn=lambda x: fh.write(x + '\n'))
 
     # Learning
     model.compile(loss=keras.losses.categorical_crossentropy,
@@ -114,6 +123,7 @@ for i, model in enumerate(model_list_cnn):
     plt.savefig('test_results/'+model_list_cnn_name[i]+'_loss.png')
     plt.cla()
 
+    # evalutate with test image set
     score = model.evaluate(x_image_test_cnn, y_image_test_cnn, verbose=0)
     print('Test loss:', score[0])
     print('Test accuracy:', score[1])
