@@ -88,7 +88,6 @@ Test accuracy: 0.6000000238418579
 ```
 ### CNN with dropout
 ```
-
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -113,7 +112,7 @@ Trainable params: 1,199,882
 Non-trainable params: 0
 _________________________________________________________________
 ```
-<img src=test_results/CNN_dropout_loss.png width="512" height="384">  
+<img src=test_results/CNN_dropout_loss.png width="500" height="375">  
 
 #### Test loss (with 30 custom image)
 ```
